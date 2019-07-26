@@ -24,7 +24,6 @@ export default {
   plugins: [
     external(),
     postcss({
-      modules: true
     }),
     url(),
     babel({
