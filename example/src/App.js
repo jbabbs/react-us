@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Modal, Pagination } from 'react-us'
+import { Modal, Pagination, Card, Dropdown } from 'react-us'
 
 export default class App extends Component {
   state = { show: false };
@@ -20,6 +20,8 @@ export default class App extends Component {
           Inside of modal goes here
         </Modal>
         <Pagination />
+        <Card />
+        <Dropdown/>
       </div>
     )
   }
