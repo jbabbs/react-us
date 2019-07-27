@@ -1,26 +1,38 @@
 import React, { Component } from 'react'
-import { Modal, Pagination, Card, Dropdown } from 'react-us'
+import { Modal, Pagination, Dropdown, Collapse } from 'react-us'
 
 export default class App extends Component {
-  state = { show: false };
+  state = {
+      showModal: false,
+      showCollapse: false,
+  };
 
   showModal = () => {
-    this.setState({ show: true })
+    this.setState({ showModal: true })
   };
 
   hideModal = () => {
-    this.setState({ show: false })
+    this.setState({ showModal: false })
+  };
+
+  toggleCollapse = () => {
+    this.setState( { showCollapse: !this.state.showCollapse });
   };
 
   render () {
     return (
       <div>
-        <button type='button' className='usa-button' onClick={this.showModal}>ToggleModal</button>
-        <Modal show={this.state.show} handleClose={this.hideModal}>
+        <button className='usa-button' onClick={this.showModal}>ToggleModal</button>
+        <Modal show={this.state.showModal} handleClose={this.hideModal}>
           Inside of modal goes here
         </Modal>
         <Pagination />
-        <Card />
+        <button className='usa-button' onClick={this.toggleCollapse}>
+            { this.state.showCollapse ? 'Show Collapse' : 'Hide Collapse' }
+        </button>
+          <Collapse isOpen={this.state.showCollapse}>
+            <pre><code>OH HI THERE</code></pre>
+          </Collapse>
         <Dropdown/>
       </div>
     )
