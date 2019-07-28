@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Modal, Pagination, Dropdown, Collapse } from 'react-us'
+import { Modal, Pagination, PaginationItem, PaginationLink, Dropdown, Collapse } from 'react-us'
 
 export default class App extends Component {
   state = {
@@ -26,14 +26,52 @@ export default class App extends Component {
         <Modal show={this.state.showModal} handleClose={this.hideModal}>
           Inside of modal goes here
         </Modal>
-        <Pagination />
+        <Pagination aria-label="Page navigation example">
+          <PaginationItem>
+            <PaginationLink first href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink previous href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">
+              1
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">
+              2
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">
+              3
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">
+              4
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">
+              5
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink next href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink last href="#" />
+          </PaginationItem>
+        </Pagination>
         <button className='usa-button' onClick={this.toggleCollapse}>
-            { this.state.showCollapse ? 'Show Collapse' : 'Hide Collapse' }
+          { this.state.showCollapse ? 'Show Collapse' : 'Hide Collapse' }
         </button>
-          <Collapse isOpen={this.state.showCollapse}>
-            <pre><code>OH HI THERE</code></pre>
-          </Collapse>
-        <Dropdown/>
+        <Collapse isOpen={this.state.showCollapse}>
+          <pre><code>OH HI THERE</code></pre>
+        </Collapse>
+        <Dropdown />
       </div>
     )
   }

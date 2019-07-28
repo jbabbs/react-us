@@ -1,0 +1,13 @@
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    padding: .75em;
+    margin: .25em;
+}

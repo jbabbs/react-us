@@ -1,15 +1,3 @@
-/**
- * @class ExampleComponent
- */
-
-import React, { Component } from 'react'
-
-export class Pagination extends Component {
-  render() {
-    return (
-      <div>
-        Pagination component
-      </div>
-    )
-  }
-}
+export { default as Pagination } from './pagination.js'
+export { default as PaginationItem } from './paginationItem'
+export { default as PaginationLink } from './paginationLink'
